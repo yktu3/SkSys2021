@@ -1,0 +1,27 @@
+/* Styling for TODO Item*/
+
+.todo-container {
+    border-radius: 15px;
+    background: #ADE8F4;
+    min-width: 400px;
+
+}
+
+.todo-text {
+    font-size: 20px;
+
+}
+
+.todo-deadline {
+    font-style: italic;
+    font-size: 16px;
+}
+
+.todo-progress {
+    font-weight: bold;
+    color: #F48C06;
+}
+
+.btn {
+    color: white;
+}
