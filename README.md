@@ -1,6 +1,6 @@
 # SkSys2021
 
-@Authors: </br>
+Authors: </br>
 <ul>
 <li>Daniel M Castro O </li>
 <li>Aykut Ömer Yanar </li>
