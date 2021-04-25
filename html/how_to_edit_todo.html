@@ -36,9 +36,51 @@
             </div>
         </div>
         <div class="flex-row align-items-center border p-4 edit-todo">
-            <div> TODO: How to Edit</div>
+            <ul>
+                <li><div> Click on the<button type="button" onclick="exampleDelete()" class=" m-1 btn btn-md btn-danger">Delete</button> button to permanently delete a ToDo item! </div>
+                <li><div> Click on the<button type="button" onclick="exampleEdit()" class="m-1 btn btn-md btn-info">Edit</button> button and then click on the Description of the ToDo item to edit it! </div>
+            </ul>  
         </div>
+         <!-- Example ToDo -->
+         <div class="container-sm todo-container border mt-3 mb-3" id="eg-todo">
+            <div class="d-flex flex-row align-items-center">
+                <div class="ml-auto d-flex flex-column">
+                    <div class="mb-3 mt-3 todo-text" id="todo-text" contenteditable="false" onfocusout="nonEditable()">
+                        Seite mit Bootstrap erstellen
+                    </div>
+                    <div class="todo-deadline">28.04.2021</div>
+                </div>
+                <div class="ms-auto d-flex flex-row align-items-center">
+                    <div class="todo-progress  m-3 "> 10% </div>
+                    <button type="button" onclick="exampleDelete()" class=" m-3 btn btn-md btn-danger">Delete</button>
+                    <button type="button" onclick="exampleEdit()" class="m-3 btn btn-md btn-info">Edit</button>
+                </div>
+            </div>
+        </div> 
     </div>
+
+    <script>
+        // Delete (hide) ToDo item when button "Delete" is clicked
+        function exampleDelete() {
+            var x = document.getElementById("eg-todo");
+            if (x.style.display === "none") {
+                x.style.display = "block";
+            } else {
+                x.style.display = "none";
+            }
+        };
+
+        // 1) Allow to modify text in ToDo item when button "Edit" is clicked
+        function exampleEdit(){
+            var y = document.getElementById('todo-text');
+            y.setAttribute("contenteditable", "true");
+            y.addEventListener('input', function() {});
+        };
+        // 2) Make text in toDo item "unditable" again when losing focus 
+        function nonEditable(){
+            document.getElementById('todo-text').setAttribute("contenteditable", "false");
+        }
+    </script>
 
     <!-- Optional JavaScript; choose one of the two! -->
     <!-- Option 1: Bootstrap Bundle with Popper -->
