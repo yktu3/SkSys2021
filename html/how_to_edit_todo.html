@@ -12,9 +12,7 @@
 
     <head>
         <link rel="stylesheet" href="../css/stylesheet_navbar.css">
-        <link rel="stylesheet" href="../css/stylesheet_todo.css">
         <link rel="stylesheet" href="../css/stylesheet_general.css">
-        <link rel="stylesheet" href="../css/stylesheet_editToDo.css">
     </head>
     <title>Todo App</title>
 </head>
@@ -23,7 +21,6 @@
     <!-- Navbar -->
     <div class="sidebar position-fixed">
         <a href="index.html">Home</a>
-        <a href="add_todo.html">Add To Do</a>
         <a class="active" href="how_to_edit_todo.html">How To Edit</a>
         <a href="impressum.html">Impressum</a>
     </div>
@@ -37,12 +34,19 @@
         </div>
         <div class="flex-row align-items-center border p-4 edit-todo">
             <ul>
-                <li><div> Click on the<button type="button" onclick="exampleDelete()" class=" m-1 btn btn-md btn-danger">Delete</button> button to permanently delete a ToDo item! </div>
-                <li><div> Click on the<button type="button" onclick="exampleEdit()" class="m-1 btn btn-md btn-info">Edit</button> button and then click on the Description of the ToDo item to edit it! </div>
-            </ul>  
+                <li>
+                    <div> Click on the<button type="button" onclick="exampleDelete()"
+                            class=" m-1 btn btn-md btn-danger">Delete</button> button to permanently delete a ToDo item!
+                    </div>
+                <li>
+                    <div> Click on the<button type="button" onclick="exampleEdit()"
+                            class="m-1 btn btn-md btn-info">Edit</button> button and then click on the Description or
+                        the Date of
+                        the ToDo item to edit it! </div>
+            </ul>
         </div>
-         <!-- Example ToDo -->
-         <div class="container-sm todo-container border mt-3 mb-3" id="eg-todo">
+        <!-- Example ToDo -->
+        <div class="container-sm todo-container border mt-3 mb-3" id="eg-todo">
             <div class="d-flex flex-row align-items-center">
                 <div class="ml-auto d-flex flex-column">
                     <div class="mb-3 mt-3 todo-text" id="todo-text" contenteditable="false" onfocusout="nonEditable()">
@@ -56,7 +60,7 @@
                     <button type="button" onclick="exampleEdit()" class="m-3 btn btn-md btn-info">Edit</button>
                 </div>
             </div>
-        </div> 
+        </div>
     </div>
 
     <script>
@@ -71,13 +75,13 @@
         };
 
         // 1) Allow to modify text in ToDo item when button "Edit" is clicked
-        function exampleEdit(){
+        function exampleEdit() {
             var y = document.getElementById('todo-text');
             y.setAttribute("contenteditable", "true");
-            y.addEventListener('input', function() {});
+            y.addEventListener('input', function () {});
         };
         // 2) Make text in toDo item "unditable" again when losing focus 
-        function nonEditable(){
+        function nonEditable() {
             document.getElementById('todo-text').setAttribute("contenteditable", "false");
         }
     </script>
